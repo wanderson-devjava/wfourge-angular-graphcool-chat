@@ -18,12 +18,12 @@ export class ApolloConfigModule {
     constructor(private apollo : Apollo, private httpLink : HttpLink) { 
 
         const uri  = 'https://api.graph.cool/simple/v1/cjjryaunc17q20109v19r66gk';
-        const HTTP = httpLink.create({ uri });
+        const http = httpLink.create({ uri });
 
         apollo.create({
-            link: HTTP,
+            link: http,
             cache: new InMemoryCache()
-        })
+        });
 
      }
 
